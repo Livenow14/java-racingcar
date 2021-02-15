@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CarName implements Name {
+public class CarName {
     private static final Pattern PATTERN = Pattern.compile("[a-zA-Z]{1,5}");
 
     private final String name;
@@ -25,7 +25,6 @@ public class CarName implements Name {
         }
     }
 
-    @Override
     public String getName() {
         return name;
     }
