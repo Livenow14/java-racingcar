@@ -10,9 +10,8 @@ public class CarName {
     private final String name;
 
     public CarName(final String name) {
-        String copy = name;
-        validateName(copy);
-        this.name = copy;
+        validateName(name);
+        this.name = name;
     }
 
     private void validateName(final String name) {
