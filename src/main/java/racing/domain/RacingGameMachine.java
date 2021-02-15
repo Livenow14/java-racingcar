@@ -15,7 +15,7 @@ public class RacingGameMachine {
     private final TryCount tryCount;
 
     public RacingGameMachine(final Cars cars, final TryCount tryCount) {
-        Cars copy = cars.clone();
+        Cars copy = Cars.generate(cars.getCars());
         validateCars(copy);
         this.cars = copy;
         this.tryCount = tryCount;

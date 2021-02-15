@@ -11,7 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Cars implements Cloneable {
+public class Cars {
     private static final int START_NUMBER = 0;
     private static final int END_NUMBER = 9;
     private static final int MINIMUM_CAR_SIZE = 2;
@@ -32,21 +32,14 @@ public class Cars implements Cloneable {
         return new Cars(cars);
     }
 
+    public static Cars generate(final List<Car> cars) {
+        return new Cars(cars);
+    }
+
     private void validateCars(List<Car> cars) {
         if (cars.size() < MINIMUM_CAR_SIZE) {
             throw new IllegalArgumentException("자동차는 1개 이상이어야 합니다");
         }
-    }
-
-    @Override
-    protected Cars clone() {
-        Cars copy = null;
-        try {
-            copy = (Cars) super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return copy;
     }
 
     public void race() {
