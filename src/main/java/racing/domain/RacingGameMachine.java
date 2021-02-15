@@ -41,7 +41,7 @@ public class RacingGameMachine {
 
     private List<CarMoveStatusDto> getCarDtos() {
         return cars.getCars().stream()
-                .map(car -> CarMoveStatusDto.of(car))
+                .map(CarMoveStatusDto::of)
                 .collect(Collectors.toList());
     }
 }
